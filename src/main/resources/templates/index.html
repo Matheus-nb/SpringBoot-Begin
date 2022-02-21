@@ -5,11 +5,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>EventosApp</title>
 </head>
 
 <body>
-  <h3>Ola mundo com Spring Boot</h3>
+  <h1>Lista de Eventos</h1>
+  <h3>
+    <a href="/cadastrarEvento">Cadastrar Eventos</a>
+  </h3>
+
+  <div th:each="evento : ${eventos}">
+    <div class="row">
+      <p><span th:text="${evento.nome}" /></p>
+      <p><span th:text="${evento.local}" /></p>
+      <p><span th:text="${evento.data}" /></p>
+      <p><span th:text="${evento.horario}" /></p>
+    </div>
+  </div>
 </body>
 
 </html>
