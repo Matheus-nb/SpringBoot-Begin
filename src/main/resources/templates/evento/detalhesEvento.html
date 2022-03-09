@@ -38,6 +38,22 @@
       RG: <input type="text" value="" name="rg" />
       <button class="waves-effect waves-light btn" type="submit">Adicionar Convidados</button>
     </form>
+
+    <h5>Lista de Convidados: </h5>
+  </div>
+
+  <div th:each="convidado : ${convidados}" class="container">
+    <div class="row">
+
+      <div class="input-field col s6">
+        <p>Nome: <span th:text="${convidado.nomeConvidado}"></span></p>
+      </div>
+
+      <div class="input-field col s3">
+        <p>RG: <span th:text="${convidado.rg}"></span></p>
+      </div>
+
+    </div>
   </div>
 
   <!--JavaScript at end of body for optimized loading-->
